@@ -3,11 +3,11 @@ package com.gradescope.DoubleQueue.code;
 /**IDoubleQueueContract
  *
  *
- *@initialization Ensures:
+ *@initialization Ensures: 
  *
- *@defines:
+ *@defines: 
  *
- *@constraints:
+ *@constraints: max_queue_size > queueMaxSize 
  *
  */
 public interface IDoubleQueue
@@ -19,11 +19,12 @@ public interface IDoubleQueue
     /**dequeueContract
      *
      *
-     *@return
+     *@return The double at the start array queue.
      *
-     *@pre
+     *@pre ArrayQueue.empty()!== True.
      *
-     *@post
+     *@post Double element at start of queue is returned and removed from queue AND queueMaxSize--. 
+     * 
      *
      */
     public Double dequeue();
@@ -31,24 +32,28 @@ public interface IDoubleQueue
     /**lengthContract
      *
      *
-     *@return
+     *@return Int value of length of arrayQueue .
      *
-     *@pre
+     *@pre 
      *
-     *@post
+     *@post Int Value of length of arrayQueue is returned.
      *
      */
+
+
     public int length();
 
-    /**toStringContract
+    /**toStringContract 
      *
      *
-     *@return
+     *@return String of doubles in array.
      *
-     *@pre
+     *@pre ArrayQueue.empty()!== True.
      *
-     *@post
+     *@post Doubles of array are converted to a string and returned as a list.
      *
      */
+
+    
     public String toString();
 }
