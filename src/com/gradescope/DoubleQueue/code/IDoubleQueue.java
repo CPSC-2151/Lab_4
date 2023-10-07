@@ -7,7 +7,7 @@ package com.gradescope.DoubleQueue.code;
  *
  *@defines: 
  *
- *@constraints: max_queue_size > queueMaxSize 
+ *@constraints: 
  *
  */
 public interface IDoubleQueue
@@ -17,7 +17,7 @@ public interface IDoubleQueue
     public void enqueue(Double val);
 
     /**dequeueContract
-     *
+     * Removes the value from the start if the Queue are returns it.
      *
      *@return The double at the start array queue.
      *
@@ -30,11 +30,11 @@ public interface IDoubleQueue
     public Double dequeue();
 
     /**lengthContract
+     * Returns the size of the arrayQueue as an int.
      *
+     *@return Int value of the number of elements in arrayQueue.
      *
-     *@return Int value of length of arrayQueue .
-     *
-     *@pre 
+     *@pre None
      *
      *@post Int Value of length of arrayQueue is returned.
      *
@@ -44,7 +44,7 @@ public interface IDoubleQueue
     public int length();
 
     /**toStringContract 
-     *
+     * Returns a string of the double values in the arrayQueue.
      *
      *@return String of doubles in array.
      *
