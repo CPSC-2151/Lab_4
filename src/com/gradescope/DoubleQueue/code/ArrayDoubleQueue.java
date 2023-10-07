@@ -41,21 +41,34 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre |self| < queueMaxSize
      *
-     * @post [self = #self with val added to left-most unoccupied index] AND queueMaxSize = #queueMaxSize AND front = #front AND back = #back + 1
+     * @post [self = #self with val added to left-most unoccupied index] AND queueMaxSize = #queueMaxSize AND front = #front AND back = (#back + 1) % size
      *
      */
     @Override
     public void enqueue(Double val)
-    {
-	
+    {	// queue is full
+	if((back + 2) % size == front){
+	    System.out.println("Queue is full..");
+	    return; 
+	}
+	back = (back + 1) % queueMaxSize; 
+	queue[back] = val;	
+		
     }
 
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
 
     @Override
     public Double dequeue()
-    {
-
+    {	// store value 
+	Double value = queue[front];
+    	// queue is empty
+    	if((back + 1) % queueMaxSize == front){
+		System.out.println("Queue is empty");
+        	return null; // Not fully implemented: return to main or print that the queue is empty
+    	}
+    	front = (front + 1) % queueMaxSize; // increment front
+	return value; 
     }
 
     @Override
