@@ -35,7 +35,7 @@ public interface IDoubleQueue
      *
      *@pre None
      *
-     *@post Int Value of length of arrayQueue is returned.
+     *@post length() = [Int Value of length of arrayQueue] AND self = #self AND queueMAXSize = #queueMAXSize
      *
      */
 
@@ -43,7 +43,7 @@ public interface IDoubleQueue
     public int length();
 
     /**toStringContract 
-     * Returns a string of the double values in the arrayQueue.
+     * Returns a string of the Double values in the arrayQueue.
      *
      *@return String of doubles in array.
      *
