@@ -5,7 +5,7 @@ package com.gradescope.DoubleQueue.code;
  * 
  *@initialization Ensures: Empty queue is created with a size of queueMaxSize
  *
- *@defines: queueMaxSize = Z
+ *@defines: max_queue_size = Z
  *
  *@constraints: 0 < queueMaxSize < Double.MAX_VALUE
  *
