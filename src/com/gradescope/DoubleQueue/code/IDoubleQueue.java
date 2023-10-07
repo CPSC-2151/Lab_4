@@ -1,13 +1,13 @@
 package com.gradescope.DoubleQueue.code;
 
 /**IDoubleQueueContract
+ * Queue that contains only Doubles or an empty queue containing ('') characters
+ * 
+ *@initialization Ensures: Empty queue is created with a size of queueMaxSize
  *
+ *@defines: queueMaxSize = Z
  *
- *@initialization Ensures: 
- *
- *@defines: 
- *
- *@constraints: 
+ *@constraints: 0 < queueMaxSize < Double.MAX_VALUE
  *
  */
 public interface IDoubleQueue
@@ -21,7 +21,7 @@ public interface IDoubleQueue
      *
      *@return The double at the start array queue.
      *
-     *@pre ArrayQueue.empty()!== True.
+     *@pre ArrayQueue.empty() !== True.
      *
      *@post Double element at start of queue is returned and removed from queue AND queueMaxSize--. 
      * 
