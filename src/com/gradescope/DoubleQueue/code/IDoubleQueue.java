@@ -43,13 +43,13 @@ public interface IDoubleQueue
     public int length();
 
     /**toStringContract 
-     * Returns a string of the Double values in the arrayQueue.
+     * Returns a String of the Double values in the arrayQueue
      *
-     *@return String of doubles in array.
+     *@return String of all the Doubles in the queue with the format, "[element1][element2]".
      *
-     *@pre ArrayQueue.empty()!== True.
+     *@pre none
      *
-     *@post Doubles of array are converted to a string and returned as a list.
+     *@post toString() = [the specified formatted String displaying all elements in the queue] AND self = #self AND queueMAXSize = #queueMAXSize
      *
      */
 
