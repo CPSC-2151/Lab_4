@@ -21,11 +21,10 @@ public interface IDoubleQueue
      *
      *@return The double at the start array queue.
      *
-     *@pre ArrayQueue.empty() !== True.
+     *@pre |self| > 0
      *
-     *@post Double element at start of queue is returned and removed from queue AND queueMaxSize--. 
+     *@post dequeue() = [Double value at the start of the queue] AND self = #self, omitting the first element AND queueMAXSize = #queueMAXSize
      * 
-     *
      */
     public Double dequeue();
 
