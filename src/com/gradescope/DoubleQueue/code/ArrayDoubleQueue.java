@@ -47,7 +47,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public void enqueue(Double val)
     {	// queue is full
-	if((back + 2) % size == front){
+	if((back + 2) % queueMaxSize == front){
 	    System.out.println("Queue is full..");
 	    return; 
 	}
@@ -74,7 +74,13 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public int length()
     {
-	return this.back;
+	
+    	if (back >= front) {
+        	return back - front + 1;
+    	} else {
+        	return (back + 1) + (queueMaxSize - front);
+    	}
+
     }
 
     public String toString()
