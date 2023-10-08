@@ -85,9 +85,11 @@ public class ArrayDoubleQueue implements IDoubleQueue
 
     public String toString()
     {
-	String queueOut;
+	String queueOut = "";
 	for(Double element : queue){
+		if(element != null){
 		queueOut += "[" + element + "]");
+		}
 	}
 	return queueOut;
     }
