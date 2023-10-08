@@ -3,11 +3,11 @@ package com.gradescope.DoubleQueue.code;
 import java.util.ArrayList;
 
 /**ListDoubleQueueContract
+ *List implementation for the double queue
  *
+ * @invariant: maxListSize > 0
  *
- * @invariant:
- *
- * @corresponds:
+ * @corresponds: max_list_size = maxListSize
  *
  */
 public class ListDoubleQueue implements IDoubleQueue
@@ -16,13 +16,13 @@ public class ListDoubleQueue implements IDoubleQueue
     private int maxListSize;
 
     /**ListDoubleQueueConstructorContact
+     * Constructor for the arrayListDouble queue
      *
+     * @param maxSize of my array list
      *
-     * @param maxSize
+     * @pre maxSize > 0
      *
-     * @pre
-     *
-     * @post
+     * @post maxListSize = maxSize AND self = new ArrayList<Double>.
      *
      */
     public ListDoubleQueue(int maxSize)
@@ -32,13 +32,13 @@ public class ListDoubleQueue implements IDoubleQueue
     }
 
     /**enqueueContact
+     * Enqueue adds an item to the queue
      *
+     * @param val the double to be added to the queue
      *
-     * @param val
+     * @pre |self| < maxListSize
      *
-     * @pre
-     *
-     * @post
+     * @post self = #self with val added to furthest empty position on the left AND maxListSize = #maxListSize
      *
      */
     @Override
