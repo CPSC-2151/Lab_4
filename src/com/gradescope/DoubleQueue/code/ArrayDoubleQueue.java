@@ -74,12 +74,16 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public int length()
     {
-
+	return back;
     }
 
     public String toString()
     {
-
+	String queueOut;
+	for(Double element : queue){
+		System.out.print("[" + element + "]");
+	}
+	System.out.println();
     }
 
     //-----------------Ignore the functions below this line-----------------------
