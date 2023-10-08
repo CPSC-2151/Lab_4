@@ -45,7 +45,7 @@ public interface IDoubleQueue
     /**toStringContract 
      * Returns a String of the Double values in the arrayQueue
      *
-     *@return String of all the Doubles in the queue with the format, "[element1][element2]".
+     *@return String of all the Doubles in the queue with the format, "[element1][element2]...[elementn]".
      *
      *@pre none
      *
