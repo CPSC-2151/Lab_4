@@ -74,7 +74,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public int length()
     {
-	return back;
+	return this.back;
     }
 
     public String toString()
