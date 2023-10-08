@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * @invariant: maxListSize > 0
  *
- * @corresponds: max_list_size = maxListSize
+ * @corresponds: max_queue_size = maxListSize
  *
  */
 public class ListDoubleQueue implements IDoubleQueue
