@@ -8,7 +8,7 @@ package com.gradescope.DoubleQueue.code;
 /**ArrayDoubleQueueContract
  * Array implementation for the Double queue.
  *
- * @invariant: queueMaxSize > 0 AND queueMaxSize <= Integer.MAX_VALUE AND back >= -1 AND back <= queueMaxSize
+ * @invariant: queueMaxSize > 0 AND queueMaxSize <= Integer.MAX_VALUE AND back >= 0 AND back <= queueMaxSize
  *
  * @corresponds: max_queue_size = queueMaxSize
  *
