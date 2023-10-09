@@ -28,7 +28,7 @@ public interface IDoubleQueue
      *
      *@pre |self| > 0
      *
-     *@post [dequeue() = Double value at the start of the queue] AND self = #self, omitting the first element AND queueMAXSize = #queueMAXSize
+     *@post [dequeue() = Double value at the start of the queue] AND self = #self, omitting the first element AND queueMAXSize = #queueMaxSize
      * 
      */
     public Double dequeue();
@@ -40,7 +40,7 @@ public interface IDoubleQueue
      *
      *@pre None
      *
-     *@post [length() = Int Value of length of arrayQueue] AND self = #self AND queueMAXSize = #queueMAXSize
+     *@post [length() = Int Value of length of arrayQueue] AND self = #self AND queueMaxSize = #queueMaxSize
      *
      */
 
@@ -54,7 +54,7 @@ public interface IDoubleQueue
      *
      *@pre none
      *
-     *@post [toString() = the specified formatted String displaying all elements in the queue] AND self = #self AND queueMAXSize = #queueMAXSize
+     *@post [toString() = the specified formatted String displaying all elements in the queue] AND self = #self AND queueMAXSize = #queueMaxSize
      *
      */
 
