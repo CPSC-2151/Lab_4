@@ -64,9 +64,13 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public Double dequeue()
     {	
-	Double value = queue[front];
-	queue[front++] = null; // clean up the dequeued element
-	return value;
+        if(back == -1){
+            System.out.println("Queue is empty...");
+            return null;
+        }
+        Double value = queue[front];
+        queue[front++] = null; // clean up the dequeued element
+        return value;
     }
 
     @Override
