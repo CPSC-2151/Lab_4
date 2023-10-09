@@ -1,5 +1,10 @@
 package com.gradescope.DoubleQueue.code;
-
+/*
+ * Jaden Humphries
+ * Jack Huber
+ * Abby Thorton
+ * Jared Alvarado
+ */
 /**ArrayDoubleQueueContract
  * Array implementation for the Double queue.
  *
