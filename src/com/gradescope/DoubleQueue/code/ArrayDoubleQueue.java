@@ -8,7 +8,7 @@ package com.gradescope.DoubleQueue.code;
 /**ArrayDoubleQueueContract
  * Array implementation for the Double queue.
  *
- * @invariant: queueMaxSize > 0 AND queueMaxSize <= Integer.MAX_VALUE AND back >= 0 AND back <= queueMaxSize
+ * @invariant: queueMaxSize > 0 AND queueMaxSize <= Integer.MAX_VALUE AND back >= -1 AND back <= queueMaxSize
  *
  * @corresponds: max_queue_size = queueMaxSize
  *
@@ -27,14 +27,14 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre maxSize > 0
      *
-     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND back = 0
+     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND back = -1
      *
      */
     public ArrayDoubleQueue(int maxSize)
     {
 	this.queueMaxSize = maxSize;
 	this.queue = new Double[this.queueMaxSize];
-	this.back = 0;
+	this.back = -1;
 
     }
 
@@ -51,7 +51,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public void enqueue(Double val)
     {	
-	queue[back++] = val;
+	queue[++back] = val;
     }
 
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
@@ -62,7 +62,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
 	Double value = queue[0];
 	// re-adjust elements; move them to the left
 	int i = 0;
-	while(i < back){
+	while(i < back - 1){
 		queue[i] = queue[i + 1];
 		i++;
 	}
@@ -73,7 +73,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public int length()
     {
-	return back; 
+	return back + 1; 
 
     }
 
