@@ -1,5 +1,10 @@
 package com.gradescope.DoubleQueue.code;
-
+/*
+ * Jaden Humphries
+ * Jack Huber
+ * Abby Thorton
+ * Jared Alvarado
+ */
 /**IDoubleQueueContract
  * Queue that contains only Doubles or an empty queue containing ('') characters
  * 
