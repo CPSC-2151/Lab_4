@@ -65,7 +65,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     public Double dequeue()
     {	
 	    
-	System.out.println("back: " + back);// queue is empty
+	System.out.println("back: " + back + "front: " + front);// queue is empty
 	if(back == -1){
 		System.out.println("Queue is empty..");
 		return null; 
