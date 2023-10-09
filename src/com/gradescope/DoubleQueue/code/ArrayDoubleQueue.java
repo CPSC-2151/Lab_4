@@ -35,7 +35,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
 	this.queueMaxSize = maxSize;
 	this.queue = new Double[this.queueMaxSize];
 	this.front = 0;
-	this.back = -1;
+	this.back = 0;
 
     }
 
@@ -66,7 +66,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     {	
 	    
 	System.out.println("back: " + back + "front: " + front);// queue is empty
-	if(back == -1){
+	if(front == 0){
 		System.out.println("Queue is empty..");
 		return null; 
 	}
