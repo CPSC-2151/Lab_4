@@ -8,7 +8,7 @@ package com.gradescope.DoubleQueue.code;
 /**ArrayDoubleQueueContract
  * Array implementation for the Double queue.
  *
- * @invariant: queueMaxSize > 0 AND queueMaxSize <= Integer.MAX_VALUE AND back >= 0 AND back <= queueMazSize -1 AND front >= 0 AND front <= queueMaxSize -1
+ * @invariant: queueMaxSize > 0 AND queueMaxSize <= Integer.MAX_VALUE AND back >= -1 AND back <= queueMaxSize
  *
  * @corresponds: max_queue_size = queueMaxSize
  *
@@ -27,14 +27,13 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre maxSize > 0
      *
-     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND front = 0 AND back = -1
+     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND back = -1
      *
      */
     public ArrayDoubleQueue(int maxSize)
     {
 	this.queueMaxSize = maxSize;
 	this.queue = new Double[this.queueMaxSize];
-	this.front = 0;
 	this.back = -1;
 
     }
@@ -46,16 +45,12 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre |self| < queueMaxSize
      *
-     * @post [self = #self with val added to left-most unoccupied index] AND queueMaxSize = #queueMaxSize AND front = #front AND back = #back +1
+     * @post [self = #self with val added to left-most unoccupied index] AND queueMaxSize = #queueMaxSize AND back = #back +1
      *
      */
     @Override
     public void enqueue(Double val)
-    {	// queue is full
-	if(back == queueMaxSize - 1){
-	    System.out.println("Queue is full..");
-	    return; 
-	}
+    {	
 	queue[++back] = val;
     }
 
@@ -64,23 +59,21 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public Double dequeue()
     {	
-	    
-	System.out.println("back: " + back + " front: " + front);// queue is empty
-	if(back == -1){
-		System.out.println("Queue is empty..");
-		return null; 
+	Double value = queue[0];
+	// re-adjust elements; move them to the left
+	int i = 0;
+	while(i < back){
+		queue[i] = queue[i + 1];
+		i++;
 	}
-	Double value = queue[front];
-	queue[front++] = null; // clean up the dequeued element
-	    System.out.println("value: " + value + "back: " + back + "front: " + front);
-	return value;
-
+	 back--; 
+	return value; 
     }
 
     @Override
     public int length()
     {
-	return back - front + 1; 
+	return back + 1; 
 
     }
 
