@@ -27,14 +27,14 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre maxSize > 0
      *
-     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND back = -1
+     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND back = 0
      *
      */
     public ArrayDoubleQueue(int maxSize)
     {
 	this.queueMaxSize = maxSize;
 	this.queue = new Double[this.queueMaxSize];
-	this.back = -1;
+	this.back = 0;
 
     }
 
@@ -51,7 +51,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public void enqueue(Double val)
     {	
-	queue[++back] = val;
+	queue[back++] = val;
     }
 
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
@@ -73,7 +73,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public int length()
     {
-	return back + 1; 
+	return back; 
 
     }
 
