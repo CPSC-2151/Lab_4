@@ -72,6 +72,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
 	}
 	Double value = queue[front];
 	queue[front++] = null; // clean up the dequeued element
+	    System.out.println("value: " + value + "back: " + back + "front: " + front);
 	return value;
 
     }
