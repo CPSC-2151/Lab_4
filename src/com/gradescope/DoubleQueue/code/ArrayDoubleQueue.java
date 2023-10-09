@@ -62,7 +62,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
 	Double value = queue[0];
 	// re-adjust elements; move them to the left
 	int i = 0;
-	while(i < back - 1){
+	while(i <= back){
 		queue[i] = queue[i + 1];
 		i++;
 	}
