@@ -22,7 +22,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre maxSize > 0
      *
-     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND front = 0 AND back = queueMaxSize - 1
+     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize] AND front = 0 AND back = -1
      *
      */
     public ArrayDoubleQueue(int maxSize)
@@ -30,7 +30,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
 	this.queueMaxSize = maxSize;
 	this.queue = new Double[this.queueMaxSize];
 	this.front = 0;
-	this.back = this.queueMaxSize - 1;
+	this.back = -1;
 
     }
 
@@ -41,45 +41,37 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      * @pre |self| < queueMaxSize
      *
-     * @post [self = #self with val added to left-most unoccupied index] AND queueMaxSize = #queueMaxSize AND front = #front AND back = (#back + 1) % size
+     * @post [self = #self with val added to left-most unoccupied index] AND queueMaxSize = #queueMaxSize AND front = #front AND back = #back +1
      *
      */
     @Override
     public void enqueue(Double val)
     {	// queue is full
-	if((back + 2) % queueMaxSize == front){
+	if(back == queueMaxSize - 1){
 	    System.out.println("Queue is full..");
 	    return; 
 	}
-	back = (back + 1) % queueMaxSize; 
-	queue[back] = val;	
-		
+	queue[++back] = val;
     }
 
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
 
     @Override
     public Double dequeue()
-    {	// store value 
+    {	
+	if(front > back){
+		System.out.println("Queue is empty..");
+		return null;
+	}
 	Double value = queue[front];
-    	// queue is empty
-    	if((back + 1) % queueMaxSize == front){
-		System.out.println("Queue is empty");
-        	return null; // Not fully implemented: return to main or print that the queue is empty
-    	}
-    	front = (front + 1) % queueMaxSize; // increment front
-	return value; 
+	queue[front++] = null; // clean up the dequeued element
+	return value;
     }
 
     @Override
     public int length()
     {
-	
-    	if (back >= front) {
-        	return back - front + 1;
-    	} else {
-        	return (back + 1) + (queueMaxSize - front);
-    	}
+	return back - front + 1; 
 
     }
 
