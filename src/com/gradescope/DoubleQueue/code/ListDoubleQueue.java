@@ -1,5 +1,10 @@
 package com.gradescope.DoubleQueue.code;
-
+/*
+ * Jaden Humphries
+ * Jack Huber
+ * Abby Thorton
+ * Jared Alvarado
+ */
 import java.util.ArrayList;
 
 /**ListDoubleQueueContract
