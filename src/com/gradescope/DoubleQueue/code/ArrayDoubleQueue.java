@@ -33,7 +33,7 @@ public class ArrayDoubleQueue <T> implements IDoubleQueue <T>
     public ArrayDoubleQueue(int maxSize)
     {
 	this.queueMaxSize = maxSize;
-	this.queue =  (T[]) new object[this.queueMaxSize];
+	this.queue =  (T[]) new Object[this.queueMaxSize];
 	this.back = -1;
 
     }
