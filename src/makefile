@@ -1,10 +1,10 @@
-default: src/com/gradescope/DoubleQueue/code/ArrayDoubleQueue.java src/com/gradescope/DoubleQueue/code/IDoubleQueue.java src/com/gradescope/DoubleQueue/code/ListDoubleQueue.java src/Driver/DoubleQueueDriver.java
-	javac src/com/gradescope/DoubleQueue/code/ArrayDoubleQueue.java src/com/gradescope/DoubleQueue/code/IDoubleQueue.java src/com/gradescope/DoubleQueue/code/ListDoubleQueue.java src/Driver/DoubleQueueDriver.java
+default: com/gradescope/DoubleQueue/code/ArrayDoubleQueue.java com/gradescope/DoubleQueue/code/IDoubleQueue.java com/gradescope/DoubleQueue/code/ListDoubleQueue.java Driver/DoubleQueueDriver.java
+	javac com/gradescope/DoubleQueue/code/ArrayDoubleQueue.java com/gradescope/DoubleQueue/code/IDoubleQueue.java com/gradescope/DoubleQueue/code/ListDoubleQueue.java Driver/DoubleQueueDriver.java
 
 
-run: src/Driver/DoubleQueueDriver.class
-	java src.Driver.DoubleQueueDriver
+run: Driver/DoubleQueueDriver.class
+	java Driver.DoubleQueueDriver
 
-clean:
-	rm -f *.class
+clean: 
+	rm -f  Driver/DoubleQueueDriver.class com/gradescope/DoubleQueue/code/ *.class 
 
