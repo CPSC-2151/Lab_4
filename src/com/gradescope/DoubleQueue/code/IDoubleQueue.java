@@ -70,9 +70,17 @@ public interface IDoubleQueue <T>
      */
     default public T peek() {
         num = length();
+        // get first value
+        T value = deque();
+        T firstValue =  value;
 
+        // iterate through shifting the entire queue back to place
+        enque(value);
+        for (int i = 0; i < num - 1; i++) {
+            value = deque();
+            enque(value);
+        }
 
-
-        return value;
+        return firstValue;
     };
 }
