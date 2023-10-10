@@ -13,7 +13,7 @@ package com.gradescope.DoubleQueue.code;
  * @corresponds: max_queue_size = queueMaxSize
  *
  */
-public class ArrayDoubleQueue implements IDoubleQueue
+public class ArrayDoubleQueue <T> implements IDoubleQueue <T> 
 {
     private T[] queue;
     private int queueMaxSize;
@@ -33,7 +33,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     public ArrayDoubleQueue(int maxSize)
     {
 	this.queueMaxSize = maxSize;
-	this.queue = new T[this.queueMaxSize];
+	this.queue =  (T[]) new object[this.queueMaxSize];
 	this.back = -1;
 
     }

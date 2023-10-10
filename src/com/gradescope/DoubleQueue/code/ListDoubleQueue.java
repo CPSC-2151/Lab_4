@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @corresponds: max_queue_size = maxListSize
  *
  */
-public class ListDoubleQueue <T> implements IDoubleQueue
+public class ListDoubleQueue <T> implements IDoubleQueue <T> 
 {
     private ArrayList<T> LQueue;
     private int maxListSize;
