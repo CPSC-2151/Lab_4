@@ -20,7 +20,7 @@ public class ListDoubleQueue <T> implements IDoubleQueue <T>
     private ArrayList<T> LQueue;
     private int maxListSize;
 
-    /**ListDoubleQueueConstructorContact
+    /**ListDoubleQueueConstructorContract
      * Constructor for the arrayListDouble queue
      *
      * @param maxSize of my array list

@@ -66,7 +66,7 @@ public interface IDoubleQueue <T>
      *
      * @pre none
      *
-     * @post [peek() = the generic type value of the first element in my queue] AND self = #self AND queueMAXSize = #queueMaxSize
+     * @post [peek() = the generic type value of the first element in my queue] AND self = #self AND queueMaxSize = #queueMaxSize
      *
      * @return The generic type value of the first element in my queue
      */
@@ -74,7 +74,7 @@ public interface IDoubleQueue <T>
        int num = length();
         // get first value
         T value = dequeue();
-        T firstValue =  value;
+        T firstValue = value;
         enqueue(value);
 
         // iterate through shifting the rest of the queue back to place
@@ -84,5 +84,5 @@ public interface IDoubleQueue <T>
         }
 
         return firstValue;
-    };
+    }
 }
