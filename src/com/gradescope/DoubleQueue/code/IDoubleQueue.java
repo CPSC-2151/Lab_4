@@ -2,7 +2,7 @@ package com.gradescope.DoubleQueue.code;
 /*
  * Jaden Humphries
  * Jack Huber
- * Abby Thorton
+ * Abby Thornton
  * Jared Alvarado
  */
 /**IDoubleQueueContract
