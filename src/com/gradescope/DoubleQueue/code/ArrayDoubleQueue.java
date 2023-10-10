@@ -15,7 +15,7 @@ package com.gradescope.DoubleQueue.code;
  */
 public class ArrayDoubleQueue implements IDoubleQueue
 {
-    private Double[] queue;
+    private T[] queue;
     private int queueMaxSize;
     private int front;
     private int back;
@@ -33,7 +33,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     public ArrayDoubleQueue(int maxSize)
     {
 	this.queueMaxSize = maxSize;
-	this.queue = new Double[this.queueMaxSize];
+	this.queue = new T[this.queueMaxSize];
 	this.back = -1;
 
     }
@@ -49,7 +49,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      */
     @Override
-    public void enqueue(Double val)
+    public void enqueue(T val)
     {	
 	queue[++back] = val;
     }
@@ -57,9 +57,9 @@ public class ArrayDoubleQueue implements IDoubleQueue
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
 
     @Override
-    public Double dequeue()
+    public T dequeue()
     {	
-	Double value = queue[0];
+	T value = queue[0];
 	// re-adjust elements; move them to the left
 	int i = 0;
 	while(i <= back){
@@ -80,7 +80,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
     public String toString()
     {
 	String queueOut = "";
-	for(Double element : queue){
+	for(T element : queue){
 	     queueOut += "[" + element + "] ";
 	}
 	return queueOut;
@@ -92,7 +92,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
         return this.queueMaxSize;
     }
 
-    public Double[] getQueue()
+    public T[] getQueue()
     {
         return this.queue;
     }
