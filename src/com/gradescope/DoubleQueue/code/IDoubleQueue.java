@@ -15,12 +15,12 @@ package com.gradescope.DoubleQueue.code;
  *@constraints: 0 < queueMaxSize < Double.MAX_VALUE
  *
  */
-public interface IDoubleQueue
+public interface IDoubleQueue <T>
 {
 
     //This function's contracts are in the individual classes
-    public void enqueue(Double val);
-
+    public void enqueue(T val);
+ 
     /**dequeueContract
      * Removes the value from the start if the Queue are returns it.
      *
@@ -31,7 +31,7 @@ public interface IDoubleQueue
      *@post [dequeue() = Double value at the start of the queue] AND self = #self, omitting the first element AND queueMAXSize = #queueMaxSize
      * 
      */
-    public Double dequeue();
+    public T dequeue();
 
     /**lengthContract
      * Returns the size of the arrayQueue as an int.
