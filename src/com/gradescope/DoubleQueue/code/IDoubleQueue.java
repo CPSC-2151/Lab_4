@@ -6,13 +6,13 @@ package com.gradescope.DoubleQueue.code;
  * Jared Alvarado
  */
 /**IDoubleQueueContract
- * Queue that contains only Doubles or an empty queue containing ('') characters
+ * Queue that contains the generic type or an empty queue containing ('') characters
  * 
  *@initialization Ensures: Empty queue is created with a size of queueMaxSize
  *
  *@defines: max_queue_size = Z
  *
- *@constraints: 0 < queueMaxSize < Double.MAX_VALUE
+ *@constraints: 0 < queueMaxSize < T.MAX_VALUE
  *
  */
 public interface IDoubleQueue <T>
@@ -24,17 +24,17 @@ public interface IDoubleQueue <T>
     /**dequeueContract
      * Removes the value from the start if the Queue are returns it.
      *
-     *@return The double at the start array queue.
+     *@return The generic type at the start array queue.
      *
      *@pre |self| > 0
      *
-     *@post [dequeue() = Double value at the start of the queue] AND self = #self, omitting the first element AND queueMAXSize = #queueMaxSize
+     *@post [dequeue() = the generic type value at the start of the queue] AND self = #self, omitting the first element AND queueMAXSize = #queueMaxSize
      * 
      */
     public T dequeue();
 
     /**lengthContract
-     * Returns the size of the arrayQueue as an int.
+     * Returns the size of the arrayQueue as a generic type.
      *
      *@return Int value of the number of elements in arrayQueue.
      *
@@ -48,9 +48,9 @@ public interface IDoubleQueue <T>
     public int length();
 
     /**toStringContract 
-     * Returns a String of the Double values in the arrayQueue
+     * Returns a String of the generic type values in the arrayQueue
      *
-     *@return String of all the Doubles in the queue with the format, "[element1][element2]...[elementn]".
+     *@return String of all the generic type values in the queue with the format, "[element1][element2]...[elementn]".
      *
      *@pre none
      *

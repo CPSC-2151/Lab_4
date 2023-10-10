@@ -8,7 +8,7 @@ package com.gradescope.DoubleQueue.code;
 import java.util.ArrayList;
 
 /**ListDoubleQueueContract
- *List implementation for the double queue
+ *List implementation for the queue of generic types
  *
  * @invariant: maxListSize > 0
  *
@@ -27,7 +27,7 @@ public class ListDoubleQueue <T> implements IDoubleQueue <T>
      *
      * @pre maxSize > 0
      *
-     * @post maxListSize = maxSize AND self = new ArrayList<Double>.
+     * @post maxListSize = maxSize AND self = new ArrayList<T>.
      *
      */
     public ListDoubleQueue(int maxSize)
@@ -39,7 +39,7 @@ public class ListDoubleQueue <T> implements IDoubleQueue <T>
     /**enqueueContact
      * Enqueue adds an item to the queue
      *
-     * @param val the double to be added to the queue
+     * @param val the generic type value to be added to the queue
      *
      * @pre |self| < maxListSize
      *
