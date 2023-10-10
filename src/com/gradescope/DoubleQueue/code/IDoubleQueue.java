@@ -65,8 +65,10 @@ public interface IDoubleQueue <T>
      * Returns the front (left-most position) of my queue without removing that item from the queue
      *
      * @pre none
-     * @post
-     * @return
+     *
+     * @post [peek() = the generic type value of the first element in my queue] AND self = #self AND queueMAXSize = #queueMaxSize
+     *
+     * @return The generic type value of the first element in my queue
      */
     default public T peek() {
        int num = length();
