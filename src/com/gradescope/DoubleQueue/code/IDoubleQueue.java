@@ -60,4 +60,19 @@ public interface IDoubleQueue <T>
 
     
     public String toString();
+
+    /**
+     * Returns the front (left-most position) of my queue without removing that item from the queue
+     *
+     * @pre none
+     * @post
+     * @return
+     */
+    default public T peek() {
+        num = length();
+
+
+
+        return value;
+    };
 }
