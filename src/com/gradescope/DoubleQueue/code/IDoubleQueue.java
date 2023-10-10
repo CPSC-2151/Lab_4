@@ -73,9 +73,9 @@ public interface IDoubleQueue <T>
         // get first value
         T value = deque();
         T firstValue =  value;
-
-        // iterate through shifting the entire queue back to place
         enque(value);
+
+        // iterate through shifting the rest of the queue back to place
         for (int i = 0; i < num - 1; i++) {
             value = deque();
             enque(value);
